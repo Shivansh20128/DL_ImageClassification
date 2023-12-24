@@ -1,2 +1,2 @@
 # DL_ImageClassification
-Deep learning projects based on image classification
+Deep learning project based on image classification of a happy face vs sad face in tensorflow using GPU
