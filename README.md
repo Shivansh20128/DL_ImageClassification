@@ -62,4 +62,73 @@ pip install tensorflow==2.8 tensorflow-gpu==2.8 matplotlib opencv-python
 
 This installation may take some time because tensorflow is a big library. After the installation, you check the installation with the command ```pip list```. You will be able to see tensorflow2.8 and tensorflow-gpu 2.8 in the list.
 
-2. 
+2. Now that we have installed tensorflow, we can start developing our deep learning networks. But note that they will not be GPU accelerated yet. We will enable GPU in the next steps.
+
+
+# Installing Visual Studio 2019
+
+1. The first thing we need to do it download visual studio 2019 from the Microsoft website. This step is required because Micrsoft Visual C++ Build tools is one of the requirements for tensorflow GPU acceleration. Here is the link where you can find it. https://visualstudio.microsoft.com/vs/older-downloads/
+1. After downloading the file, start the installation. While installing, you will asked about the workloads you want to install in the Visual Studio. Check the boxes for "Python Development" under Web & Cloud, and "Desktop developement with C++" under Desktop & Mobile. Although we don't need Python development right now, but I still recommend installing it in case you decide python development on it in future. 
+1. Click the install button.
+
+
+# Enable GPU Acceleration
+
+Now we are near the end for GPU acceleration. We need to two softwares to be installed on our system to enable our GPUs to be detected by tensorflow. These two softwares are CUDA and cuDNN. Both these softwares are avaiable on the web. 
+But before proceeding, I want you to go to the link https://www.tensorflow.org/install/source_windows#gpu
+
+Here, you will see what versions of each software we have installed. At my current time, CUDA 11.2 and cuDNN 8.1 are the latest versions that are supported.
+Lets install these one by one.
+
+## Installing CUDA
+1. Go to the following link. 
+https://developer.nvidia.com/cuda-11.2.0-download-archive
+
+2. Select your operating system, your architecture, your windows version and the installer type you want to download. Note that if you are on Windows 11, the version 10 CUDA will still work for you, so don't worry about that. Download the installer and start installing.
+3. Note that you may be asked to create an NVIDIA account first. So go ahead and create your account and install CUDA.
+4. While installing CUDA, you don't need to change any setting and proceed with the default recommended installation.
+ 
+## Installing cuDNN
+1. Go to the following link.
+https://developer.nvidia.com/rdp/cudnn-archive
+
+2. Find the cuDNN version 8.1.1 (Feburary 26th, 2021), for CUDA 11.0,11.1 and 11.2. And download the zip file.
+1. After downloading the zip file and extracting it, you need to transfer some files from this folder to the CUDA toolkit folder at your installed location (which is normally at C:\Program Files\NVIDIA GPU Computing Toolkit).
+1. Open the extracted folder. you will see folders lib\x64, bin, and include. 
+1. Copy the files from lib\x64, and paste them inside C:\Program Files\NVIDIA GPU Computing Toolkit\lib\x64.
+1. Copy the files from bin, and paste them inside C:\Program Files\NVIDIA GPU Computing Toolkit\bin.
+1. Copy the files from include, and paste them inside C:\Program Files\NVIDIA GPU Computing Toolkit\include.
+
+Now we are at the last step. You need to add the CUDA files to the path. For that, open your system's environment variables, select PATH, and click new. Add the following paths one by one to it.
+1. C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin
+1. C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\libnvvp
+1. C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\extras\CUPTI\lib64
+
+Click the OK button.
+
+And we are done!
+
+# Checking GPUs
+Now we can check if our GPUs are detected by the tensorflow.
+
+For that, open jupyter lab using the command ```jupter lab``` in the command prompt.
+Create a new notebook in the virtual environment we created.
+
+Add a new cell, and add the following code to it.
+```
+import tensorflow as tf
+
+gpus = tf.config.experimental.list_physical_devices('GPU')
+for gpu in gpus:
+    tf.config.experimental.set_memory_growth(gpu, True)
+
+tf.config.list_physical_devices('GPU')
+```
+
+Run this cell using Shift+Enter. You should be able to see your GPU listed like "[PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]". 
+
+# Running the project
+
+Now that your GPUs are enabled for acceleration, you can build a deep learning model and observe the boost in speed. Here I have provided a model for binary classification between images of lions and tigers. Go ahead and build the model by running the given script file.
+
+Hope you learned a lot!
