@@ -2,7 +2,7 @@
 In this project, I have created a deep learning project based on image classification of lions vs tigers in tensorflow using GPU
 
 # About this project
-If you have done deep learning before, then you must already know how a model for a binary classification is made. This project also aims to perform a binary classification of lions and tiger images. But in this project, we are going to use our GPUs to accelerate the process of training the model. By using GPUs in your system, you can speed up the process of training more than 300%. 
+If you have done deep learning before, then you must already know how a model for a binary classification is made. This project also aims to perform a binary classification of lions and tiger images. But here, we are going to use our GPUs to accelerate the process of training the model. By using GPUs in your system, you can speed up the process of training by more than 300%. 
 
 We know that training a deep learning neural network takes a lot of time when it comes to images. For example, once I created a model for classifying images of cats and dogs. The dataset had around 12000 images in the training set. When I performed the training with just my CPU, which is an intel 5 core 11th gen CPU, it took me around 90 minutes, which was after prioritizing the process to high priority. 
 
