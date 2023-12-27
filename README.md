@@ -1,8 +1,8 @@
 # GPU Accelerated Tensorflow 
-In this project, I have created a deep learning project based on image classification of lions vs tigers in tensorflow using GPU
+In this project, I have created a deep learning project based on image classification of leopards vs tigers in tensorflow using GPU
 
 # About this project
-If you have done deep learning before, then you must already know how a model for a binary classification is made. This project also aims to perform a binary classification of lions and tiger images. But here, we are going to use our GPUs to accelerate the process of training the model. By using GPUs in your system, you can speed up the process of training by more than 300%. 
+If you have done deep learning before, then you must already know how a model for a binary classification is made. This project also aims to perform a binary classification of leopards and tiger images. But here, we are going to use our GPUs to accelerate the process of training the model. By using GPUs in your system, you can speed up the process of training by more than 300%. 
 
 We know that training a deep-learning neural network regarding images takes a lot of time. For example, once, I created a model for classifying images of cats and dogs. The dataset had around 12000 images in the training set. When I performed the training with just my CPU, which is an intel 5 core 11th gen CPU, it took me around 90 minutes, which was after prioritizing the process to high priority.
 
@@ -129,6 +129,9 @@ Run this cell using Shift+Enter. You should be able to see your GPU listed like 
 
 # Running the project
 
-Now that your GPUs are enabled for acceleration, you can build a deep-learning model and observe the boost in speed. Here, I have provided a model for binary classification between images of lions and tigers. Go ahead and build the model by running the given script file.
+Now that your GPUs are enabled for acceleration, you can build a deep-learning model and observe the boost in speed. Here, I have provided a model for binary classification between images of leopards and tigers. Go ahead and build the model by running the given script file.
 
 Hope you learned a lot!
+
+
+Image source - [leopard](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.treehugger.com%2Fdifference-between-jaguars-and-leopards-6746206&psig=AOvVaw1RkPRN4XISVRn7jxQ5kEPi&ust=1703775884075000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiti_bxr4MDFQAAAAAdAAAAABAD)
