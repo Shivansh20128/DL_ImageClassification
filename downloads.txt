@@ -1,0 +1,4 @@
+1. Anaconda with Python 3.9 - https://anaconda.org/anaconda/python/files?version=3.9.12
+2. Visual Studio 2019 - https://visualstudio.microsoft.com/vs/older-downloads/
+3. CUDA - https://developer.nvidia.com/cuda-11.2.0-download-archive
+4. cuDNN - https://developer.nvidia.com/rdp/cudnn-archive
